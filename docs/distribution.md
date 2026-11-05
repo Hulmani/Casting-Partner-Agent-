@@ -2,7 +2,7 @@
 
 ## Confirmed product direction
 
-The project is open source under the MIT license. Each person downloads and runs their own copy, signs in to their own services, and keeps their profile, photos, browser sessions, and opportunity records in their own environment. This first product does not need a shared account service or central database.
+The project is open source under the MIT license. Each person downloads and runs their own copy, grants access to the Chrome session where they already use their services, and keeps their profile, photos, browser sessions, and opportunity records in their own environment. The first workflow is browser-first: use existing sign-ins when available and hand off expired-session or verification screens. A new per-service OAuth connection is optional, not required for this initial browsing workflow. This first product does not need a shared account service or central database.
 
 Use the same casting workflow regardless of who runs it. The initial runtime will be a local app and worker; an optional future dot/plugin integration may call the same restricted operations. A ChatGPT subscription, dot, or this repository alone does not establish a connection to any casting site. The standalone app will need separately configured AI inference if model extraction or reasoning is enabled; no model provider is connected yet.
 
@@ -35,8 +35,8 @@ On Windows, create the environment with `py -m venv .venv`, then use `.venv\Scri
 
 - Mouse/touch onboarding with screen-reader labels, large controls, and no required terminal or keyboard shortcuts.
 - Explain local storage, any data sent to an AI provider, costs, and selected source access before connection.
-- User chooses source connections, confirms their own profile facts, and signs in without sharing passwords in chat.
-- Secure credential storage and dedicated browser sessions. Verify the supported access method for each service.
+- User chooses which browser tabs/sites the agent may use and confirms their own profile facts. Reuse the selected session's existing sign-ins; private login handoff is only needed when the site requires it.
+- Verify a supported local browser bridge and secure session handling. Do not copy cookies, require a fresh profile by default, or imply that launching Chrome alone grants the app control.
 - A visible run/pause control, source health, failed-login handoff, approval queue, and history.
 - Packaged desktop installation, supported-platform checks, signed/notarized artifacts where applicable, versioned upgrades, and user-controlled uninstall/export/delete behavior.
 - Review privacy, accessibility, platform terms, dependency licenses, and security behavior. Do not label the product compliant merely because a checklist exists.
