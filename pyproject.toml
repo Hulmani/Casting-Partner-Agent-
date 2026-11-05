@@ -29,3 +29,6 @@ include = ["casting_agent", "casting_agent.*"]
 
 [tool.setuptools]
 include-package-data = false
+
+[tool.setuptools.package-data]
+casting_agent = ["native/*.swift"]

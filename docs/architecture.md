@@ -53,4 +53,4 @@ tests/                  # Fictional fixtures and meaningful behavior checks
 
 ## This iteration's limits
 
-Models, adapter interfaces, fictional intake, SQLite history, package entry points, and non-secret local settings are implemented. The planned action states, approvals, scheduler, UI, calendar, dot integration, and browser driver are not executable yet.
+Models, adapter interfaces, fictional intake, SQLite history, package entry points, and non-secret local settings are implemented. A native macOS control prototype now compiles and exposes URL launch, Accessibility reads, and bounded mouse navigation. Its live desktop test is blocked; no real page read is verified. The full approval workflow, scheduler, end-user UI, calendar, dot integration, and autonomous browser agent remain unimplemented. See [desktop proof](desktop-proof.md).
