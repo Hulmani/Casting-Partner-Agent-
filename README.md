@@ -4,9 +4,11 @@ A personal casting assistant that brings agency listings, Facebook leads, and em
 
 Open source under the [MIT license](LICENSE). The product direction is a downloadable local app: each person runs their own copy and connects their own accounts. A dot integration is optional and planned.
 
-## Current iteration: installable foundation
+## Current iteration: desktop-control proof (not live-validated)
 
 Working: a standard opportunity record, source adapter contract, SQLite intake with duplicate protection and revision history, an installable Python package, non-secret per-user settings, and a local demo using fictional data.
+
+New code: a native macOS Chrome launcher, Accessibility reader, bounded mouse navigation, and a clickable test window. The code compiles, but the current execution environment blocks the live test. **No successful real-page read is verified yet.** See [the exact validation results and manual test](docs/desktop-proof.md).
 
 Planned next: connect to the user's existing signed-in Chrome session through an explicitly authorized local browser-control bridge, then read Bon-Ker, Facebook casting posts, and Gmail pages. Direct Gmail/API connections are optional later integrations. Matching against a verified profile and calendar, an accessible approval dashboard, and submission tracking remain planned. No live account integration, AI calls, scheduler, or application submission is enabled yet. This project does not inherit tools or login sessions from the chat that created it.
 
