@@ -1,19 +1,29 @@
 # Iteration plan
 
-## 0 — Foundation (current)
+## 0 — Foundation
 
 - Define product boundaries, standard opportunity data, and adapter capabilities.
 - Ingest fictional records into SQLite without duplicate rows on repeated runs.
 - Preserve changed listings and roll back a failed intake batch.
 - Establish tests and CI.
 
-## 1 — Gmail discovery
+## 0.1 — Local open-source distribution (current)
 
-Read-only Gmail authorization; explicit selected senders/groups; persistent incremental cursor; distinguish Facebook previews, full casting emails, availability requests, and booking confirmations. Keep original message/post references and report intake failures. Test duplicate notifications and missing role details.
+- MIT license, installable Python package, and developer entry point.
+- Per-user non-secret settings outside the checkout, with read-only defaults.
+- Installed-package smoke checks across macOS, Windows, and Linux.
+- Document end-user release gates and an optional future dot connection.
+- A graphical installer and mouse/touch onboarding are still required before advertising a download-and-use app.
 
-## 2 — Browser discovery
+## 1 — Existing-session Chrome control (next)
 
-Dedicated browser profile and visible login handoff. Read Bon-Ker listings and Facebook group posts, expand full text, record evidence and canonical post identity, and detect login or challenge screens. No posting or applying. Prove extraction on user-approved sources and test failure handling.
+First prove our standalone app can read a tab in the user's existing signed-in Chrome session through a supported, explicitly authorized local browser bridge. Provide mouse/touch controls for selecting sites and stopping access. Launching Chrome alone is not the bridge. Do not copy cookies or require a new browser profile or per-service OAuth by default.
+
+Then read Bon-Ker listings, Facebook casting posts, and Gmail pages. Expand full text, distinguish email previews from complete listings and booking/availability messages, retain original references, and detect expired sessions or verification screens. Report missing access instead of claiming success. Read only: no posting or applying.
+
+## 2 — Optional direct email/API connections
+
+Offer read-only Gmail OAuth when it improves reliability or scheduling, without making it mandatory for browser-based use. Preserve selected senders/groups, incremental cursors, original references, duplicate handling, and clear source health.
 
 ## 3 — Profile, matching, and accessible review
 

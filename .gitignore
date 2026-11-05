@@ -10,3 +10,9 @@ artifacts/
 *.sqlite*
 *.db
 .DS_Store
+build/
+dist/
+*.egg-info/
+settings.json
+credentials*.json
+token*.json
