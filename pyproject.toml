@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "casting-partner-agent"
+version = "0.1.0.dev1"
+description = "Local casting assistant foundation with read-only defaults"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{name = "Casting Partner Agent contributors"}]
+dependencies = []
+classifiers = [
+  "Development Status :: 2 - Pre-Alpha",
+  "Programming Language :: Python :: 3",
+]
+
+[project.urls]
+Repository = "https://github.com/Hulmani/Casting-Partner-Agent-"
+Issues = "https://github.com/Hulmani/Casting-Partner-Agent-/issues"
+
+[project.scripts]
+casting-agent = "casting_agent.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["casting_agent", "casting_agent.*"]
+
+[tool.setuptools]
+include-package-data = false

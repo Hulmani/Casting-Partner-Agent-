@@ -1,11 +1,19 @@
 # Iteration plan
 
-## 0 — Foundation (current)
+## 0 — Foundation
 
 - Define product boundaries, standard opportunity data, and adapter capabilities.
 - Ingest fictional records into SQLite without duplicate rows on repeated runs.
 - Preserve changed listings and roll back a failed intake batch.
 - Establish tests and CI.
+
+## 0.1 — Local open-source distribution (current)
+
+- MIT license, installable Python package, and developer entry point.
+- Per-user non-secret settings outside the checkout, with read-only defaults.
+- Installed-package smoke checks across macOS, Windows, and Linux.
+- Document end-user release gates and an optional future dot connection.
+- A graphical installer and mouse/touch onboarding are still required before advertising a download-and-use app.
 
 ## 1 — Gmail discovery
 

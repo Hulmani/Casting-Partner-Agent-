@@ -20,7 +20,9 @@ Discover → retrieve full listing → normalize → detect duplicates → check
 
 ## Proposed runtime
 
-Start on the user's Mac with a local service and SQLite. Keep the computer awake and online for scheduled runs. Use a dedicated browser profile for the worker, with the user signing in normally. Gmail uses its own authorized connection. A future hosted deployment needs its own credentials, browser environment, and operational setup.
+Distribute a local app that each person installs and connects to their own accounts. Start live integration testing on the user's Mac; test portable core behavior on Windows and Linux as well. Keep the computer awake and online for scheduled local runs. Use a dedicated browser profile for the worker, with the user signing in normally. Gmail uses its own authorized connection. Store non-secret settings in the per-user application data directory rather than the source checkout. A shared hosted account service is outside the first product scope. See [distribution](distribution.md).
+
+An optional future [dot integration](dot-integration.md) can reuse restricted workflow operations. Standalone use must not require a dot, and no runtime inherits this chat's accounts or browser sessions.
 
 The desktop chat's `cua_repl` access is not a dependency we can assume is available to this app. Implement a replaceable browser-driver interface. Evaluate Playwright/browser control first for sites; add screenshot-based computer use where necessary after verifying API access and behavior. Public reference: https://developers.openai.com/api/docs/guides/tools-computer-use
 
@@ -51,4 +53,4 @@ tests/                  # Fictional fixtures and meaningful behavior checks
 
 ## This iteration's limits
 
-Only models, adapter interfaces, fictional intake, and SQLite history are implemented. The planned action states, approvals, scheduler, UI, calendar, and browser driver are not executable yet.
+Models, adapter interfaces, fictional intake, SQLite history, package entry points, and non-secret local settings are implemented. The planned action states, approvals, scheduler, UI, calendar, dot integration, and browser driver are not executable yet.
